@@ -50,7 +50,7 @@ stages:
   - job: Deploy
     displayName: Deploy
     pool:
-      name: my-ldp-pool  # Cambiar a 'linuxagent' o el nombre correcto de tu pool
+      name: linuxagent  # Cambiar a 'linuxagent' o el nombre correcto de tu pool
     steps:
     - script: |
         sudo apt-get update
@@ -64,7 +64,7 @@ stages:
 
     - task: AzureCLI@2
       inputs:
-        azureSubscription: 'my-lpd-token'
+        azureSubscription: 'my-ldp-token'
         scriptType: 'bash'
         scriptLocation: 'inlineScript'
         inlineScript: |
