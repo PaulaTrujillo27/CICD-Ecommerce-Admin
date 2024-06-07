@@ -12,7 +12,7 @@ variables:
 
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: '71607449-8e9b-49e2-be41-7cb79cd8991b'
-  imageRepository: 'ecommerceadmin'
+  imageRepository: 'ecommerce-admin'
   containerRegistry: 'myldpacontainerregistry.azurecr.io'
   dockerfilePath: '**/Dockerfile'
   tag: '$(Build.BuildId)'
