@@ -59,7 +59,8 @@ stages:
 
     - script: |
         git clone https://$(GITHUB_TOKEN)@github.com/PaulaTrujillo27/kubernetes-files-ecommerce.git
-        sed -i 's/image: acrk8sprojectecommerce.azurecr.io\/ecommerce-admin:.*/image: acrk8sprojectecommerce.azurecr.io\/ecommerce-admin:$(tag)/' ecommerce-admin.yaml
+        cd kubernetes-files-ecommerce
+        sed -i 's/image: myldpacontainerregistry.azurecr.io\/ecommerce-admin:.*/image: myldpacontainerregistry.azurecr.io\/ecommerce-admin:$(tag)/' ecommerce-general.yaml
       displayName: Clone repository and update YAML
 
     - task: AzureCLI@2
@@ -68,6 +69,6 @@ stages:
         scriptType: 'bash'
         scriptLocation: 'inlineScript'
         inlineScript: |
-          az aks get-credentials --resource-group apiK8sRss --name myCluster
-          kubectl apply -f ecommerce-general.yaml
+          az aks get-credentials --resource-group my-ldp-Ecommerce-Company --name my-ldp-EcommerceCluster
+          kubectl apply -f kubernetes-files-ecommerce/ecommerce-general.yaml
       displayName: Deploy to AKS
