@@ -1,1 +1,1 @@
-# CICD-Ecommerce-Admin
+# CI-CD-Admin-Microservice-Azure
