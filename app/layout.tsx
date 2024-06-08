@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Dashboard',
-  description: 'E-Commerce Dashboard New',
+  description: 'E-Commerce Dashboard Service',
 }
 
 export default async function RootLayout({
